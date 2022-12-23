@@ -17,6 +17,24 @@ export const routes: Array<RouteRecordRaw> = [
           title: "首页",
         },
       },
+      {
+        path: "encdec",
+        name: "encdec",
+        meta: {
+          title: "加解密",
+        },
+        redirect: {name: 'encdecAES'},
+        children: [
+          {
+            path: "encdecAES",
+            name: "encdecAES",
+            component: () => import("@/views/encdec/aes.vue"),
+            meta: {
+              title: "AES",
+            },
+          },
+        ]
+      },
     ],
   },
 ];
